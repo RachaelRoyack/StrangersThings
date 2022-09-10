@@ -1,0 +1,20 @@
+.Post {
+    border: solid;
+    border-color: black;
+}
+
+.postHeader {
+    font-size: 1.3em;
+    padding: 1em;
+}
+
+.postAndSearch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.postSearchBar {
+    height: 3%;
+}

@@ -1,0 +1,12 @@
+
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: lightgray;
+}
+a {
+    padding: 2%;
+    
+    
+}

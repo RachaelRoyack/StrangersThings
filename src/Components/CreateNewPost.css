@@ -1,0 +1,24 @@
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+
+.newPostInput {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+h3 {
+   margin-right:.5em ;
+}
+

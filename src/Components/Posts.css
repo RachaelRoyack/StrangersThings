@@ -1,6 +1,25 @@
+main {
+display: block;    
+}
+
+.postsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
 .Post {
+    align-items: center;
+    justify-items: center;
     border: solid;
     border-color: black;
+    width: 20rem;
+    height: 20rem;
+    padding: 2.5%;
+    margin: 3%;
+    border-radius: 6%;
 }
 
 .postHeader {
@@ -9,10 +28,12 @@
 }
 
 .postAndSearch {
-    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    height: 5rem;
+    width:20rem;
+    margin-bottom: 2rem;
 }
 
 .postSearchBar {

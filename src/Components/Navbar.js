@@ -8,11 +8,12 @@ const Navbar = ({logout, token}) => {
             <nav>
                <Link to='/'>HOME</Link>
                <Link to='/posts'>POSTS</Link> 
-               <Link to='/profile'>PROFILE</Link> 
 
                 { token ? (
-                    <Link to='/' 
-                    onClick={() => logout()}>LOGOUT</Link>
+                    <Fragment>
+                        <Link to='/profile'>PROFILE</Link> 
+                        <Link to='/' onClick={() => logout()}>LOGOUT</Link>
+                    </Fragment>
                 ) : (
                     <Fragment>
                         <Link to='/register'>REGISTER</Link>

@@ -53,8 +53,6 @@ const App = () => {
         setUserProfile({});
     }
 
-    console.log (userProfile)
-
     const fetchPosts = async() => {
         const results = await getPosts(token)
         setPosts(results.data.posts)
@@ -91,7 +89,7 @@ const App = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/posts' element={<Posts posts={posts} token={token} />} />
-                <Route path='/profile' element={<Profile userProfile={userProfile}/>} />
+                <Route path='/profile' element={<Profile userProfile={userProfile} posts={posts}/>} />
                 <Route path='/register' element={<Register 
                     open={open} 
                     setOpen={setOpen} 
@@ -120,7 +118,13 @@ const App = () => {
                 open={open} setOpen={setOpen}
                 fetchPosts={fetchPosts}/>} />
                 <Route path ='/posts/:postID' element={<SinglePostView posts={posts} />} />
-                <Route path ='/posts/message/:postID' element={<Message posts={posts} token={token} open={open} setOpen={setOpen}/>} />
+                <Route path ='/posts/message/:postID' element={<Message 
+                posts={posts} 
+                token={token} 
+                open={open} 
+                setOpen={setOpen}
+                navigate={navigate}
+                setUserProfile={setUserProfile} />} />
                 <Route path ='/posts/edit-post/:postID' element={<EditPost posts={posts} token={token} navigate={navigate} fetchPosts={fetchPosts}/>} />
             </Routes>
             

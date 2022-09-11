@@ -1,5 +1,6 @@
 import React from "react";
 import {useParams} from 'react-router-dom';
+import './SinglePostView.css'
 
 
 const SinglePostView = ({posts}) => {
@@ -10,7 +11,7 @@ const SinglePostView = ({posts}) => {
     const {title, description, location, price, willDeliver} = currentPost;
 
     return (
-            <div className='Post'>
+            <div className='SinglePost'>
                 <h3>{title}</h3>
                 <p><strong>Description: </strong>{description}</p>
                 <p><strong>Price:</strong> {price}</p>

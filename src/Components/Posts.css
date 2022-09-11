@@ -11,31 +11,123 @@ display: block;
 }
 
 .Post {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-items: center;
+    align-content: center;
     border: solid;
     border-color: black;
-    width: 20rem;
-    height: 20rem;
-    padding: 2.5%;
+    width: 30rem;
+    height: 35rem;
     margin: 3%;
     border-radius: 6%;
+    padding: 2%;
+    box-shadow: 1em 1em 1em 1em;
+    background-image: url('../videos/waterripples.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #black;
+    text-shadow: 2px 2px 2px white;
+}
+
+
+
+.buttonsBelowPost {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+
 }
 
 .postHeader {
-    font-size: 1.3em;
+    font-size: 3rem;
     padding: 1em;
 }
 
 .postAndSearch {
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-items: center;
     height: 5rem;
-    width:20rem;
+    width:150%;
     margin-bottom: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+    font-size: 2rem;
 }
 
 .postSearchBar {
-    height: 3%;
+    height: 2rem;
+}
+
+button {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: black;
+    color: white;
+}
+
+.PostsList {
+    width: 50%;
+    display: flex;
+    justify-items: space-between;
+}
+.createPostButton {
+    width: 7rem;
+    margin-left: 2rem;
+}
+
+button > a {
+    text-decoration: none;
+    color: white;
+}
+
+button:hover {
+    background-color: ;
+}
+
+@media only screen and (max-width: 800px) {
+
+.postHeader {
+    font-size: 3rem;
+    margin: 0;
+    margin-top: 1em;
+    padding: 0;
+}
+
+.postAndSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    height: 2rem;
+    width:20rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: .5rem;
+}   
+
+.Post {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border: solid;
+    border-color: black;
+    width: 15rem;
+    height: 28rem;
+    margin: 3%;
+    border-radius: 6%;
+    padding: 1%;
+    box-shadow: 1em 1em 1em 1em;
+    background-image: url('../videos/waterripples.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    text-shadow: 2px 2px 2px white;
+}
+
 }

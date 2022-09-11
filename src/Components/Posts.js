@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { Fragment, useState} from "react";
 import {Link }from 'react-router-dom';
 import './Posts.css'
 import { deletePost } from "../api";
@@ -25,7 +25,7 @@ const Posts = (props) => {
                 <main>
                     <div className="postAndSearch">
                         <h1 className='postHeader'>POSTS</h1>
-                        <form onSubmit = {(event)=> {
+                        <form className="PostsList" onSubmit = {(event)=> {
                             event.preventDefault();    
                             }
                             }>
@@ -35,7 +35,7 @@ const Posts = (props) => {
                             onChange = {(event) => setSearchTerm(event.target.value)}
                             ></input>
                             <button className="createPostButton">
-                                <Link to='/createNewPost'>Add New Post</Link>
+                                <Link to='/createNewPost'>Add Post</Link>
                             </button>
                         </form>
                     </div>
@@ -48,7 +48,7 @@ const Posts = (props) => {
                             <p><strong>Price:</strong> {price}</p>
                             <p><strong>Location:</strong> {location}</p>
                             <p><strong>Delivery: </strong>{willDeliver ? 'Available' : "unavailable"}</p>
-                            <p>
+                            <p className="buttonsAndMessages">
                             {
                                 isAuthor ? (
                                     <>
@@ -59,19 +59,23 @@ const Posts = (props) => {
                                                         <p><strong>{fromUser.username}: </strong> {content}</p>
                                                     </div>})
                                         }
-                
-                                        <button>
-                                            <Link to={`/posts/edit-post/${_id}`}>Edit</Link>
-                                        </button>
-                                        <button onClick={(event) => {event.preventDefault(); deletePost(_id,token)}
-                                    }>Delete</button>
+                                        <Fragment className='buttonsBelowPost'>
+                                            <button className="editButton">
+                                                <Link to={`/posts/edit-post/${_id}`}>Edit</Link>
+                                            </button>
+                                            <button className="deleteButton" onClick={(event) => {event.preventDefault(); deletePost(_id,token)}
+                                            }>Delete</button>
+                                        </Fragment>
                                     </>
                                 ) : (
                                     <>
-                                        <button>
+                                    <Fragment className='buttonsBelowPost'>
+                                        <button className="viewButton">
                                             <Link to={`/posts/${_id}`}>View</Link>
                                         </button>
-                                        <button><Link to={`/posts/message/${_id}`}>Send Message</Link></button>
+                                       { token ? <button className="messageButton"><Link to={`/posts/message/${_id}`}>Message</Link></button>
+                                     : null}
+                                     </Fragment>
                                     </>
                                 )
                             }

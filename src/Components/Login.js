@@ -23,7 +23,7 @@ const Login = ({setUsername, username, setPassword, password, navigate, setToken
     }
     
     return (
-        <form onSubmit = {(event)=> {
+        <form className="loginForm" onSubmit = {(event)=> {
             event.preventDefault();
                 handleSubmit()
             }

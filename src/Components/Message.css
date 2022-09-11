@@ -1,3 +1,62 @@
 .postInMessage {
     border: none;
 }
+
+.messageSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.inputMessage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    align-items: center;
+}
+
+.inputMessage > input {
+    width: 30rem;
+    height: 10rem;
+    border: solid;
+    margin-bottom: 1em;
+}
+
+.inputMessage > button {
+    width: 30rem;
+}
+
+@media only screen and (max-width: 800px) {
+    main {
+        height: 3rem;
+        width: 20rem;
+        margin-left: 10%;
+
+    }
+
+    .inputMessage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        width: 5%;
+        margin: 5%;
+    }
+    
+    .inputMessage > input {
+        width: 15rem;
+        height: 7.5rem;
+        border: solid;
+        margin-bottom: .75em;
+    
+    }
+    
+    .inputMessage > button {
+        width: 25rem;
+
+    }
+}
+

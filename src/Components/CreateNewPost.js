@@ -24,7 +24,7 @@ const CreateNewPost = ({token, navigate, open, setOpen, fetchPosts, }) => {
     }
 
     return (
-        <main>
+        <main className="CreatePost">
             <h1>Add Post</h1>
             <form className='postSubmitForm' onSubmit = {(event)=> {
             event.preventDefault();

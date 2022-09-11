@@ -1,0 +1,15 @@
+.SinglePost {
+    border: solid;
+    border-color: black;
+    width: 15rem;
+    height: 20rem;
+    margin: 5%;
+    border-radius: 6%;
+    padding: 2%;
+    box-shadow: 1em 1em 1em 1em;
+    background-image: url('../videos/waterripples.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #black;
+    text-shadow: 2px 2px 2px white;
+}

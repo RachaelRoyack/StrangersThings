@@ -1,0 +1,16 @@
+.EditPostForm {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: 3%;
+}
+
+.EditPostForm > input {
+    margin: 3%;
+}
+
+.deliveryEdit {
+    display: flex;
+    flex-direction: row;
+}

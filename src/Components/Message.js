@@ -5,6 +5,7 @@ import { Snackbar } from "@mui/material";
 import './Message.css'
 
 const Message = ({posts, token, open, setOpen, navigate, setUserProfile}) => {
+    if (posts.length){ 
     const [message, setMessage] = useState('')
 
     const { postID } = useParams();
@@ -24,7 +25,7 @@ const Message = ({posts, token, open, setOpen, navigate, setUserProfile}) => {
         } 
     }
 
-    return (
+        return(
         <main>
             <div className='postInMessage'>
                 <h3>{title}</h3>
@@ -33,25 +34,32 @@ const Message = ({posts, token, open, setOpen, navigate, setUserProfile}) => {
                 <p><strong>Location:</strong> {location}</p>
                 {willDeliver ? (<p>Delivery: Yes</p>) : <p>Delivery: No</p>}
             </div>
-            <form onSubmit = {(event)=> {
-            event.preventDefault();
-                handleSubmit()
-            }}>
-            <Snackbar 
-                open={open}
-                anchorOrigin= {{vertical: "top", horizontal: "center"}}
-                message='Message Sent' 
-                autoHideDuration={2000} 
-                onClose={() => setOpen(false)}
-                >
-            </Snackbar>
+            <div className="messageSection">
             <h3>Message User About This Post</h3>
-            <input type='text' placeholder="type message here" onChange={event => setMessage(event.target.value)}></input>
-            <button type='submit'>Send</button>
-            </form>
+                <form onSubmit = {(event)=> {
+                event.preventDefault();
+                    handleSubmit()
+                }}>
+                <Snackbar 
+                    open={open}
+                    anchorOrigin= {{vertical: "top", horizontal: "center"}}
+                    message='Message Sent' 
+                    autoHideDuration={2000} 
+                    onClose={() => setOpen(false)}
+                    >
+                </Snackbar>
+                <div className="inputMessage">
+                <input type='text' placeholder="type message here" onChange={event => setMessage(event.target.value)}></input>
+                <button type='submit'>Send</button>
+                </div>
+                </form>
+            </div>
         </main>
 
     )
+} else {
+    return <h3>Loading Message Box...</h3>
+}
 }
 
 export default Message;

@@ -1,0 +1,17 @@
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: 2rem;
+    width: 100%;
+}
+
+.loginForm > * {
+    width: 40%;
+    margin: 2em;
+}
+
+.loginForm > input {
+    height: 3rem;
+}

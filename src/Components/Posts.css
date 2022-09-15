@@ -26,8 +26,12 @@ display: block;
     background-image: url('../videos/waterripples.gif');
     background-repeat: no-repeat;
     background-size: cover;
-    color: #black;
+    color: black;
     text-shadow: 2px 2px 2px white;
+}
+
+.description, .messages {
+    overflow: scroll;
 }
 
 
@@ -83,9 +87,6 @@ button > a {
     color: white;
 }
 
-button:hover {
-    background-color: ;
-}
 
 @media only screen and (max-width: 800px) {
 

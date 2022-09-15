@@ -44,7 +44,7 @@ const Posts = (props) => {
                     const {description, location, price, title, _id, willDeliver, isAuthor} = post;
                     return <div key={_id} className='Post'>
                             <h3>{title}</h3>
-                            <p>{description}</p>
+                            <p className='description'>{description}</p>
                             <p><strong>Price:</strong> {price}</p>
                             <p><strong>Location:</strong> {location}</p>
                             <p><strong>Delivery: </strong>{willDeliver ? 'Available' : "unavailable"}</p>
@@ -52,7 +52,7 @@ const Posts = (props) => {
                             {
                                 isAuthor ? (
                                     <>
-                                        <h3>Messages:</h3>
+                                        <h3 className="messages">Messages:</h3>
                                         {post.messages.map(message => {
                                             const {content, fromUser, post, _id} = message
                                             return <div key={_id} className="messagesForPost">
@@ -63,7 +63,7 @@ const Posts = (props) => {
                                             <button className="editButton">
                                                 <Link to={`/posts/edit-post/${_id}`}>Edit</Link>
                                             </button>
-                                            <button className="deleteButton" onClick={(event) => {event.preventDefault(); deletePost(_id,token)}
+                                            <button className="deleteButton" onClick={(event) => {event.preventDefault(); deletePost(_id,token); window.location.reload()}
                                             }>Delete</button>
                                         </Fragment>
                                     </>

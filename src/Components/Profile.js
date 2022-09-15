@@ -2,7 +2,8 @@ import React from "react";
 import './Profile.css'
 import {Link }from 'react-router-dom';
 
-const Profile = ({userProfile, posts,}) => {
+const Profile = ({userProfile}) => {
+    
 
 if(userProfile.messages) {
     return (
@@ -10,11 +11,14 @@ if(userProfile.messages) {
             <h2>Messages to Me</h2>
             {userProfile.messages.map(message => {
                 const {content, fromUser, post, _id} = message
+              
+
+
                 if (fromUser._id !== userProfile._id) {
                     return <div key={_id} className="messagesToMe">
                                 <h3>From: {fromUser.username}</h3>
                                 <p>{content}</p>
-                                <p><strong>Post: </strong><Link classname="messagePost" to={`/posts/${post._id}`}>{post.title}</Link></p>
+                                <p><strong>Post: </strong> <Link classname="messagePost" to={`/posts/${post._id}`}>{post.title}</Link></p>
                             </div>
                 }
             })}
